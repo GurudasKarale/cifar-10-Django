@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+.container {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin-left:170px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:900px;
+  padding:10px;
+  text-align: center;
+}
+.button {
+  border-radius: 25px;
+  background-color:  #008CBA;
+  color: white;
+  font-size: 16px;
+
+}
+.categ {
+  border-radius: 25px;
+  margin-left:90px;
+  border:1px solid #eee;
+  padding:10px;
+  width:700px;
+  text-align: left;
+}
+
+
+.heading {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin:10px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:700px;
+  padding:10px;
+  text-align: center;
+}
+
+.frm {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin:10px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:700px;
+  padding:10px;
+  text-align: center;
+}
+.result {
+  border-radius: 25px;
+  background-color: white;
+  color: white;
+  color:	#808080;
+  display:inline-block;
+  margin:10px;
+  border:1px solid #eee;
+  box-shadow:0 2px 2px #ccc;
+  width:700px;
+  padding:10px;
+  text-align: center;
+}
+
+</style>
+    <script>
+function validateForm() {
+  var x = document.forms["myForm"]["image"].value;
+  if (x == '') {
+    alert("Image not selected!");
+    return false;
+  }
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+<div class="heading"><h1>Image classification</h1>
+     <h2>Upload 32x32 image from the following categories of images</h2>
+</div>
+
+<div class="categ">
+<ul>
+          <li>Airplane</li>
+          <li>Automobile</li>
+          <li>Bird</li>
+		  <li>Cat</li>
+          <li>Deer</li>
+          <li>Dog</li>
+		  <li>Frog</li>
+          <li>Horse</li>
+          <li>Ship</li>
+		  <li>Truck</li>
+</ul>
+</div>
+
+<div class="frm">
+    <form name="myForm" action="getimage" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+          {% csrf_token %}
+    <label >Select image:</label>
+    <input type="file" name="image">
+    <input type="submit" class="button">
+    </form>
+</div>
+
+<div class="result"><strong>{{result}} {{response}} </strong></div>
+</div>
+</body>
+</html>
