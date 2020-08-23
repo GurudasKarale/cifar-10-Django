@@ -12,6 +12,8 @@ Create new urls.py file in app directory and include it in the main urls.py file
 
 Getimage method in views.py file in 'imageForm application directory' takes image as the request and apply trained cnn model(cifmodel.h5) on it and gives the response back.
 
+![Image of app](https://github.com/GurudasKarale/cifar-10-using-Django/blob/master/img/imgapp.PNG)
+
 
 # Convolutional Neural Network
 
@@ -92,5 +94,5 @@ __dImage=  full-convolution(dConv1,rotated filter1)__
  
  ![Image of conv](https://github.com/GurudasKarale/cifar-10-using-Django/blob/master/img/11.PNG)
  
- __This is how gradients are calculated which are then used by optimization algorithm to update weights.__
+ __This is how gradients are calculated which are later used by optimization algorithm to update weights.__
 
