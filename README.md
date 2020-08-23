@@ -1,5 +1,16 @@
 # cifar-10-using-Django webapp
  
+Run the folowing command in the shell to start new project:
+       
+       Django-admin startproject 'project name'
+
+After creating the project , create application in the project folder, run following command:
+      
+      python manage.py startapp 'app name'
+
+Create new urls.py file in app directory and include it in the main urls.py file in project directory.
+
+Getimage method in views.py file in 'imageForm application directory' takes image as the request and apply trained cnn model(cifmodel.h5) on it and gives the response back.
 
 
 # Convolutional Neural Network
